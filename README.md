@@ -18,11 +18,13 @@ Este repositorio contiene una aplicación web para el reconocimiento facial en t
 
 ## 📂 Estructura del Proyecto
 
+```
 📁 proyecto/
-├── app.py # Código principal de la aplicación Streamlit
-├── dataset_embeddings.pkl # Base de datos de embeddings faciales
-├── requirements.txt # Dependencias del proyecto
-└── README.md # Este archivo
+├── app.py                  # Código principal de la aplicación Streamlit
+├── dataset_embeddings.pkl  # Base de datos de embeddings faciales
+├── requirements.txt        # Dependencias del proyecto
+└── README.md               # Este archivo
+```
 
 ## ▶️ Uso
 
