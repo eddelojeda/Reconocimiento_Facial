@@ -21,10 +21,10 @@ mtcnn = MTCNN(keep_all=False, device=device)
 resnet = InceptionResnetV1(pretrained='vggface2').eval().to(device)
 
 # Configuración de la página
-st.set_page_config(page_title="Reconocimiento Facial en Tiempo Real", layout="wide")
+st.set_page_config(page_title="Reconocimiento Facial - RNP 2025", layout="wide")
 
 # Título de la aplicación
-st.title("Reconocimiento Facial en Tiempo Real")
+st.title("Reconocimiento Facial - RNP 2025")
 
 #--------------------------------------------------------------------------------------------------------------------------- 
 
