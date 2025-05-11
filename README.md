@@ -46,6 +46,11 @@ Este repositorio contiene una aplicación web para el reconocimiento facial en t
    streamlit run app.py
    ```
 
+## 🌐 Prueba la app
+Puedes probar la aplicación en línea en el siguiente enlace:
+
+[App - Reconocimiente Facial](https://reconocimiento-facial-eo.streamlit.app/)
+
 ## ⚠️ Requisitos
 
 - El archivo dataset_embeddings.pkl debe estar disponible en el repositorio. Este archivo contiene los embeddings faciales de las personas a reconocer.
