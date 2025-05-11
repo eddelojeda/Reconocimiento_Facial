@@ -57,4 +57,4 @@ Este repositorio contiene una aplicación web para el reconocimiento facial en t
 - Puedes extender el sistema añadiendo nuevos usuarios mediante extracción manual con facenet-pytorch.
 
 ## ✏️ Autor
-Desarrollado por Eddel Elí Ojeda Avilés
+Desarrollado por [Eddel Ojeda](https://github.com/eddelojeda)
