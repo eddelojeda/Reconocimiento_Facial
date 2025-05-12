@@ -34,13 +34,29 @@ Este repositorio contiene una aplicación web para el reconocimiento facial en t
    cd reconocimiento-facial-app
    ```
 
-2. Instala las dependencias:
+2. Crea y activa un ambiente virtual `venv_rf` con python 3.9:
+   
+   - Usando conda o miniconda
+
+      ```bash
+      conda create -n venv_rf python=3.9
+      conda activate venv_rf
+      ```
+
+   - Usando venv
+
+      ```
+      python3.9 -m venv venv_rf
+      source venv_rf/bin/activate 
+      ```
+
+3. Instala las dependencias:
 
    ```bash
    pip install -r requirements.txt
    ```
    
-3. Ejecuta la app localmente:
+4. Ejecuta la app localmente:
 
    ```bash
    streamlit run app.py
