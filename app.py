@@ -31,6 +31,17 @@ st.title("Reconocimiento Facial - RNP 2025")
 # Carga de dataset_embeddings.pkl
 @st.cache_resource
 def load_embeddings(path='dataset_embeddings.pkl'):
+    """
+    Carga un archivo de embeddings previamente serializado en formato pickle.
+
+    Args:
+        path (str): Ruta del archivo pickle que contiene los embeddings. Valor por default: 'dataset_embeddings.pkl'.
+
+    Returns:
+        Any: Objeto deserializado que contiene los embeddings del dataset.
+    """
+
+    # Carga y retorna el contenido del archivo guardado en path con los embeddings del dataset
     try:
         with open(path, 'rb') as f:
             return pickle.load(f)
@@ -41,10 +52,27 @@ def load_embeddings(path='dataset_embeddings.pkl'):
 #--------------------------------------------------------------------------------------------------------------------------- 
 
 # Función para encontrar la persona más similar en el dataset
-def find_most_similar(embedding_input, embeddings_db, threshold=0.95):
+def find_most_similar(embedding_input, embeddings_db, threshold=0.9):
+    """
+    Compara un embedding de entrada con una base de datos de embeddings y devuelve la identidad más similar.
+
+    Args:
+        embedding_input (torch.Tensor): Vector de embedding a comparar (tensor 1xN).
+        embeddings_db (dict): Diccionario que mapea nombres a listas de embeddings (por ejemplo, {'persona1': [emb1, emb2, ...]}).
+        threshold (float): Umbral de similitud mínima (entre 0 y 1) para considerar una coincidencia válida. Por defecto es 0.9.
+
+    Returns:
+            tuple: Una tupla (identity, highest_similarity), donde:
+            - identity (str): El nombre más similar encontrado si supera el umbral; "Desconocido" en caso contrario.
+            - highest_similarity (float): El valor más alto de similitud coseno encontrada.
+    """
+
+    # Inicilización de las variables de salida highest_similarity y identity 
     highest_similarity = float('-inf')
     identity = "Desconocido"
 
+    # Itera sobre cada identidad y su lista de embeddings, convirtiendo el embedding actual en un tensor y calculando/conservando
+    # la similitud del embedding actual y cada embedding en el dataset siempre que sean más grandes que el valor de threshold
     for name, embeddings in embeddings_db.items():
         for emb in embeddings:
             emb_tensor = torch.tensor(emb, dtype=torch.float32).unsqueeze(0).to(device)
