@@ -1,4 +1,4 @@
-# Reconocimiento Facial en Tiempo Real 🧠📸
+# Reconocimiento Facial
 
 Este repositorio contiene una aplicación web para el reconocimiento facial en tiempo real utilizando deep learning. La app permite identificar personas a partir de una imagen capturada con la cámara, comparando sus características faciales contra un conjunto de embeddings previamente registrados.
 
